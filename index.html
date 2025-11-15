@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blogging Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📝 My Blog</h1>
+            <p class="subtitle">Share your thoughts and ideas</p>
+        </header>
+
+        <!-- Add Blog Form -->
+        <div class="form-section">
+            <h2>Create a New Post</h2>
+            <form id="blogForm">
+                <div class="form-group">
+                    <label for="blogTitle">Blog Title</label>
+                    <input 
+                        type="text" 
+                        id="blogTitle" 
+                        placeholder="Enter blog title"
+                        maxlength="100"
+                        required>
+                    <span class="char-count"><span id="titleCount">0</span>/100</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="blogContent">Blog Content</label>
+                    <textarea 
+                        id="blogContent" 
+                        placeholder="Write your blog content here..."
+                        rows="8"
+                        maxlength="1000"
+                        required></textarea>
+                    <span class="char-count"><span id="contentCount">0</span>/1000</span>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">Publish Post</button>
+                    <button type="reset" class="btn btn-secondary">Clear</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Display Blogs -->
+        <div class="blogs-section">
+            <div class="section-header">
+                <h2>All Posts (<span id="blogCount">0</span>)</h2>
+                <button class="btn btn-danger" id="clearAllBtn" style="display: none;">Delete All</button>
+            </div>
+            
+            <div id="blogsContainer" class="blogs-container">
+                <p class="no-blogs">No posts yet. Create your first blog post!</p>
+            </div>
+        </div>
+
+        <!-- JSON Export -->
+        <div class="json-section">
+            <h2>Export as JSON</h2>
+            <div class="json-display" id="jsonDisplay">
+                <p class="placeholder">No blogs to export</p>
+            </div>
+            <button class="btn btn-success" id="copyJsonBtn" style="display: none;">Copy JSON</button>
+            <button class="btn btn-info" id="downloadJsonBtn" style="display: none;">Download JSON</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
